@@ -11,8 +11,7 @@ dirname = os.path.dirname(seqfile)
 for record in SeqIO.parse(seqfile, "fasta"):
     if name in record.description:
         record.id = dirname + "_" + record.id
-        fo = open('/dev/stdout', "w")
-        SeqIO.write(record, fo, "fasta")
+        SeqIO.write(record, sys.stdout, 'fasta')
 
 
         
